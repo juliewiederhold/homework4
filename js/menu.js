@@ -6,7 +6,7 @@ The data is arranged in an object tree (see below for structure).
 Use this to build your user interface, as
 well as maintain what is in the shopping cart.
 
-Author: D Stearns
+Author: D Stearns !!!
 */
 
 /*
