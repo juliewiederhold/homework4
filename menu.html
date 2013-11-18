@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/styles.css">
+	<title>Dawg Pizza</title>
+	<meta name="author" content="jcw27">
+</head>
+<body>
+	<div class="content">
+		<header>
+			<a href="index.html"><img class="logo" src="img/logo.png" alt="Dawg Pizza Logo"></a>
+			<p class="motto">Awesome wood-fired pizza with fresh ingredients baked to order. Come in and eat, or call us for delivery!</p>
+		</header>
+
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li><a href="about.html">About Us</a></li>
+                <li><a href="order.html">Order Online!</a></li>
+			</ul>
+		</nav>
+		
+		<img class="top-image" src="img/pizza-order.jpg" alt="Order Line Image">
+
+		<section>
+			<h1>Menu</h1>
+			<p class="type">All our pizzas are made with hand-thrown thin crust, baked in real wood ovens. Choose from one of three sizes:</p>
+			<ul>
+				<li>Small (12")</li>
+				<li>Medium (14")</li>
+				<li>Large (17")</li>
+			</ul>
+			<p class="note">All pizzas can be customized:</p>
+			<p class="note">Add a few ingredients, or take a few off for an extra $2.</p>
+
+			
+ <!-- container for the generated menu  entries -->
+            <div class="menu-content">
+            	<h2 class="menu-header">Pizzas</h2>
+            	<div class="pizzas"></div>
+            	
+            	<div class="col">
+            		<h2 class="menu-header">Drinks</h2>
+            		<div class="drinks"></div>
+            	</div>
+            	<div class="col">
+            		<img class="menu-pic" src="img/cheesecake-ricotta.jpg" alt="Ricotta Cheesecake Image">
+            	</div>
+            	<div class="col">
+            		<h2 class="menu-header">Desserts</h2>
+            		<div class="dessert"></div>
+            	</div>
+
+            	<div class="row"></div>
+            </div>
+
+            <!-- template card for each entry
+             this will not be displayed, only used by code -->
+
+            <div class="template pizza">
+                <div>
+                    <h2 class="name"></h2>
+                    <p class="description"></p>
+                    <p class="prices">
+                    	($<span class="small"></span> / 
+                    	$<span class="medium"></span> / 
+                    	$<span class="large"></span>) 
+                    </p>
+                </div>
+            </div>
+
+            <div class="template drinks-dessert">
+                <div>
+                	<span class="name"></span> : 
+                    $<span class="price"></span>
+                </div>
+            </div>
+        </section>  
+         
+		<footer>Call us for delivery: 206-555-1212
+		<p class="copyright">&#169; 2013 Dawg Pizza</p>
+		</footer>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
+	<script src="js/menu.js"></script>
+    <script src="js/menu-input.js"></script>
+</body>
+</html>
