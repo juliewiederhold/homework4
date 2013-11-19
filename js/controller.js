@@ -14,7 +14,5 @@ $(function(){
 		totalPrice: $('.total-price')
 	});
 
-	var menuModel = createMenuModel({
-		url: 
-	})
+	var menuModel = createMenuModel(com.dawgpizza.menu); // needs to return a get of list of pizzas/drinks/desserts
 });
