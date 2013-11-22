@@ -27,6 +27,14 @@ function render(menu){
         clonePizza.find('.medium').html(pizza.prices[1]);
         clonePizza.find('.large').html(pizza.prices[2]);
 
+        if(clonePizza.find('.add-to-cart').length > 0){
+            clonePizza.find('.add-small').attr('data-price', pizza.prices[0]);
+            clonePizza.find('.add-medium').attr('data-price', pizza.prices[1]);
+            clonePizza.find('.add-large').attr('data-price', pizza.prices[2]);
+            clonePizza.find('.add-to-cart').attr('data-name', pizza.name);
+        }
+        
+
         pizzasContainer.append(clonePizza);
         clonePizza.removeClass('template');
     }
@@ -37,6 +45,10 @@ function render(menu){
 
         cloneDrinks.find('.name').html(drinks.name);
         cloneDrinks.find('.price').html(drinks.price);
+
+        if(clonePizza.find('.add-to-cart').length > 0){
+            clonePizza.find('.add-drink-dessert').attr()
+        }
 
         drinksContainer.append(cloneDrinks);
         cloneDrinks.removeClass('template');

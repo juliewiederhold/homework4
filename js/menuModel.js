@@ -10,7 +10,5 @@
 */
 
 function createMenuModel(config) {
-    //needs to separate pizza/drinks/desserts
-    return render(config);
-    
+    return render(config);  
 } //createMoviesModel()

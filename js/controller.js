@@ -1,9 +1,9 @@
 $(function(){
-	var formatLabels = {
-		prices[0]: 'Small',
-		prices[1]: 'Medium',
-		prices[2]: 'Large'
-	}
+	// var formatLabels = {
+	// 	prices[0]: 'Small',
+	// 	prices[1]: 'Medium',
+	// 	prices[2]: 'Large'
+	// }
 
 	var cartModel = createCartModel();
 
@@ -14,5 +14,7 @@ $(function(){
 		totalPrice: $('.total-price')
 	});
 
-	var menuModel = createMenuModel(com.dawgpizza.menu); // needs to return a get of list of pizzas/drinks/desserts
+	var menuModel = createMenuModel(com.dawgpizza.menu);
+
+
 });
