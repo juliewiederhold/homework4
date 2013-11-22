@@ -15,8 +15,4 @@ $(function(){
 	});
 
 	var menuModel = createMenuModel(com.dawgpizza.menu); // needs to return a get of list of pizzas/drinks/desserts
-
-	var menuView = createMenuView({
-
-	});
 });
