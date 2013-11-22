@@ -60,7 +60,21 @@ function createCartModel() {
 
     model.toJSON = function(){
         return JSON.stringify(this);
-    }
+    };
+
+    model.getItems = function() {
+        return this.items;
+    };
+
+    model.getTotalPrice = function() {
+        var idx;
+        var totalPrice = 0;
+
+        for(idx = 0; idx < this.items.length; ++idx){
+            totalPrice += this.items[idx].price;
+        }
+        return totalPrice.toFixed(2);
+    };
 
     return model;
 }

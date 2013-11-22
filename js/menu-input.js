@@ -1,8 +1,3 @@
-// 
-$(function() {
-    render(com.dawgpizza.menu);
-});
-
 function render(menu){
     var templatePizza = $('.pizza');
     var templateDD = $('.drinks-dessert'); //merge templates
@@ -46,8 +41,9 @@ function render(menu){
         cloneDrinks.find('.name').html(drinks.name);
         cloneDrinks.find('.price').html(drinks.price);
 
-        if(clonePizza.find('.add-to-cart').length > 0){
-            clonePizza.find('.add-drink-dessert').attr()
+        if(cloneDrinks.find('.add-to-cart').length > 0){
+            cloneDrinks.find('.add-drink-dessert').attr('data-name', drinks.name);
+            cloneDrinks.find('.add-drink-dessert').attr('data-price', drinks.price);
         }
 
         drinksContainer.append(cloneDrinks);

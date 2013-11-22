@@ -16,5 +16,16 @@ $(function(){
 
 	var menuModel = createMenuModel(com.dawgpizza.menu);
 
+	$('.add-to-cart').click(function(){
+    	var newCartItem = {
+        	type: this.getAttribute('data-type'),
+        	name: this.getAttribute('data-name'),
+        	size: this.getAttribute('data-size'),
+        	price: parseFloat(this.getAttribute('data-price'))
+    	};
+
+    	cartModel.addItem(newCartItem);
+    	console.log(cartModel);
+}	);
 
 });
