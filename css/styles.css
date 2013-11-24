@@ -179,6 +179,11 @@ footer {
 	margin: 35px;
 }
 
+.total {
+	border-top: thin double #d3d3d3;
+	/*border-top-width: 10%*/
+}
+
 .note {
 	font-weight: bolder;
 	margin: 5px;

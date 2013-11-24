@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dawg Pizza</title>
-	<link rel="stylesheet" href="lib/bootstrap-3.0.2/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="lib/bootstrap-3.0.2/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Dawg Pizza</title>
 	<meta name="author" content="jcw27">
@@ -38,6 +38,14 @@
 
 			<div class="row">
 				<div class="col-order">
+					<div class="sort-ui">
+		                <span class="sort-label">Sort By: </span>
+		                <div class="btn-group">
+		                    <button type="button" class="btn btn-default active" data-sortby="pizza">Pizzas</button>
+		                    <button type="button" class="btn btn-default" data-sortby="drinks">Drinks</button>
+		                    <button type="button" class="btn btn-default" data-sortby="dessert">Dessert</button>
+		                </div>
+		            </div> <!-- sort-ui-->
 					<div class="menu-content">
 						<h2>Pizzas</h2>
             			<div class="pizzas"></div>
@@ -54,17 +62,25 @@
 					<div class="cart-items-container"></div>
 					<div class="cart-footer">
 						<div class="row total-row">
-							<div class="col-xs-2">
-								Total:
+							<p>Sub-Total:</p>
+							<div class="sub-total-price">
+								$<span class="sub-total-price"></span>
 							</div>
+							<p>+ 9.5% tax</p>
+							<p  class="total">Total:</p>
 							<div class="total-price">
 								$<span class="total-price"></span>
 							</div>
+							<p><button class='place-order'>Place Order</button></p>
 						</div>
+					</div> <!-- cart-footer -->
+					<div class="delivery-info-container">
+						
 					</div>
-				</div>
+					<form></form>
+				</div> <!-- col-order -->
 			</div> <!-- row -->
-		</div> <!-- .container -->
+		</div> <!-- container -->
 
 		<div class="template">
 			<div class="template pizza">
@@ -103,13 +119,14 @@
 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-	<script src="lib/bootstrap.min.js"></script>
+	<!-- <script src="lib/bootstrap.min.js"></script> -->
 	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/events.js"></script>
     <script src="js/models.js"></script>
     <script src="js/menuModel.js"></script>
    	<script src="js/menu-input.js"></script>
+   	<script src="js/sort-menu.js"></script>
     <script src="js/views.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cartItemView.js"></script>

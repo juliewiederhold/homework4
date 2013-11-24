@@ -1,6 +1,6 @@
 function render(menu){
     var templatePizza = $('.pizza');
-    var templateDD = $('.drinks-dessert'); //merge templates
+    var templateDD = $('.drinks-dessert');
 
     var idx;
     var pizza;

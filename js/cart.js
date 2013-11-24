@@ -8,27 +8,6 @@
     - items (array of objects) initial items for the cart (optional)
 */
 
-// function createCartModel(config) {
-// 	var model = createListModel(config);
-
-//     // returns the total price of the elements in the cart
-// 	model.getTotalPrice = function() {
-//     	var idx;
-//     	var totalPrice = 0;
-
-//     	for(idx = 0; idx < this.items.length; ++idx){
-//     		totalPrice += this.items[idx].price;
-//     	}
-//     	return totalPrice.toFixed(2);
-// 	}; //getTotalPrice()
-
-//     // returns a JSON representation of the cart items
-// 	model.toJSON = function() {
-// 		return JSON.stringify(this.items);
-// 	};
-
-// 	return model;
-// } //createCartModel()
 
 function createCartModel() {
     var model = {
@@ -66,12 +45,23 @@ function createCartModel() {
         return this.items;
     };
 
+    model.getSubTotalPrice = function() {
+        var idx;
+        var subTotalPrice = 0; 
+
+        for(idx = 0; idx < this.items.length; ++idx){
+            subTotalPrice += this.items[idx].price;
+        }
+        
+        return subTotalPrice.toFixed(2);
+    }
+
     model.getTotalPrice = function() {
         var idx;
         var totalPrice = 0;
 
         for(idx = 0; idx < this.items.length; ++idx){
-            totalPrice += this.items[idx].price;
+            totalPrice += this.items[idx].price + (this.items[idx].price * .095);
         }
         return totalPrice.toFixed(2);
     };
