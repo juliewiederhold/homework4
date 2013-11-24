@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<title>Dawg Pizza</title>
+	<link rel="stylesheet" href="lib/bootstrap-3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Dawg Pizza</title>
 	<meta name="author" content="jcw27">
@@ -35,7 +37,19 @@
 			<h1>Menu</h1>
 
 			<div class="row">
-				<div class="col-md-4 col-md-push-8">
+				<div class="col-order">
+					<div class="menu-content">
+						<h2>Pizzas</h2>
+            			<div class="pizzas"></div>
+
+            			<h2>Drinks</h2>
+            			<div class="drinks"></div>
+
+            			<h2>Desserts</h2>
+            			<div class="dessert"></div>
+					</div> <!-- .menu-content -->
+				</div>
+				<div class="col-order">
 					<h2>Your Cart</h2>
 					<div class="cart-items-container"></div>
 					<div class="cart-footer">
@@ -48,20 +62,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-8 col-md-pull-4">
-					<div class="menu-content">
-						<h2>Pizzas</h2>
-            			<div class="pizzas"></div>
-
-            			<h2>Drinks</h2>
-            			<div class="drinks"></div>
-
-            			<h2>Desserts</h2>
-            			<div class="dessert"></div>
-					</div> <!-- .menu-content -->
-
-
 				</div>
 			</div> <!-- row -->
 		</div> <!-- .container -->
@@ -89,15 +89,10 @@
             <div class="cart-item-template cart-item row">
                 <div class="col-xs-10">
                 	<div>
+                		<button type="button" class="btn btn-default btn-xs remove-item">&times;</button> 
                 		<span class="name"></span> : 
                     	$<span class="price"></span>
                 	</div>
-                    <p><button type="button" class="btn btn-default btn-xs remove-item">&times;</button> 
-                        <span class="title"></span> (<span class="formatLabel"></span>)
-                    </p>
-                </div>
-                <div class="col-xs-2 col-price">
-                    <p>$<span class="price"></span></p>
                 </div>
             </div><!-- cart item template -->
 		</div> <!-- template -->
@@ -108,6 +103,7 @@
 
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script src="lib/bootstrap.min.js"></script>
 	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/events.js"></script>

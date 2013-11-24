@@ -3,10 +3,10 @@
 /* line-height may help closeness of lines #FFC409 reset CSS file to reset browser default styling to a consistent starting point */
 @import url(reset.css);
 /**/
-* {
+/** {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-}
+}*/
 
 body {
  	background-color: #9480E8;
@@ -89,6 +89,7 @@ footer {
 	border-top: thin double #d3d3d3;
 	margin-top: 50px;
 	padding-top: 10px;
+	clear: both;
 }
 
 .content {
@@ -108,6 +109,11 @@ footer {
 	margin-top: 50px;
 	float: left;
 	width: 33%;
+}
+
+.col-order {
+	width: 50%;
+	float: left;
 }
 
 .row {
@@ -141,7 +147,7 @@ footer {
 .price {
 	margin-bottom: 5px;
 	color: #000;
-	font-size: 20px;
+	font-size: 15px;
 }
 
 .logo {

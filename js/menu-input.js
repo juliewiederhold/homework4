@@ -57,6 +57,11 @@ function render(menu){
         cloneDessert.find('.name').html(dessert.name);
         cloneDessert.find('.price').html(dessert.price);
 
+        if(cloneDrinks.find('.add-to-cart').length > 0){
+            cloneDessert.find('.add-drink-dessert').attr('data-name', drinks.name);
+            cloneDessert.find('.add-drink-dessert').attr('data-price', drinks.price);
+        }
+
         dessertsContainer.append(cloneDessert);
         cloneDessert.removeClass('template');
     }
