@@ -10,14 +10,14 @@
 */
 
 function createMenuModel(config) {
-	var model = {
-		pizzas: config.pizzas,
-		drinks: config.drinks,
-		dessert: config.dessert
-	};
+	// var model = {
+	// 	pizzas: config.pizzas,
+	// 	drinks: config.drinks,
+	// 	dessert: config.dessert
+	// };
 
-	makeEventSource(model);
+	// makeEventSource(model);
 
-    sortObjArray(model.pizzas, 'pizza');
-    return render(model.pizzas);  
+    // sortObjArray(model.pizzas, 'pizza');
+    return render(config);  
 } //createMoviesModel()

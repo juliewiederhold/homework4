@@ -179,9 +179,15 @@ footer {
 	margin: 35px;
 }
 
+.total-row {
+	border: thin double #d3d3d3;
+}
+
 .total {
 	border-top: thin double #d3d3d3;
-	/*border-top-width: 10%*/
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .note {

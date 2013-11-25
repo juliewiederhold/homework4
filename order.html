@@ -64,20 +64,41 @@
 						<div class="row total-row">
 							<p>Sub-Total:</p>
 							<div class="sub-total-price">
-								$<span class="sub-total-price"></span>
+								$<span class="sub-total-price"></span>0.00
 							</div>
 							<p>+ 9.5% tax</p>
 							<p  class="total">Total:</p>
 							<div class="total-price">
-								$<span class="total-price"></span>
+								$<span class="total-price"></span>0.00
 							</div>
-							<p><button class='place-order'>Place Order</button></p>
 						</div>
 					</div> <!-- cart-footer -->
-					<div class="delivery-info-container">
-						
-					</div>
-					<form></form>
+					<h2>Delivery Information</h2>
+					<input type="hidden" name="cart">
+			         <form>
+			            <p>
+			                <label for="name">Name:</label>
+			                <input class="name-input" type="text" name="name" required>
+			            </p>
+			           <!--  method="POST" action="http://dawgpizza.com/orders/"
+			           <p>
+			                <label for="address1">Address:</label>
+			                <input id="address1-input" type="text" name="address1" required>
+			            </p>
+			            <p>
+			            	<label for="address2">Address:</label>
+			                <input id="address2-input" type="text" name="address2" >
+			            </p>
+			            <p>
+			                <label for="zip">Zip Code:</label>
+			                <input id="zip-input" type="text" name="zip" required>
+			            </p>
+			            <p>
+			                <label for="phoneNumber">Phone Number:</label>
+			                <input id="phoneNumber-input" type="text" name="phoneNumber" required>
+			            </p> -->
+			            <p><button class="place-order">Place Order</button></p>
+			        </form> <!-- form -->
 				</div> <!-- col-order -->
 			</div> <!-- row -->
 		</div> <!-- container -->
