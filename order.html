@@ -3,11 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dawg Pizza</title>
-	<!-- <link rel="stylesheet" href="lib/bootstrap-3.0.2/css/bootstrap.min.css"> -->
 	<link rel="stylesheet" href="css/styles.css">
 	<title>Dawg Pizza</title>
 	<meta name="author" content="jcw27">
-<!-- omg -->
 </head>
 <body>
 	<div class="content">
@@ -38,14 +36,6 @@
 
 			<div class="row">
 				<div class="col-order">
-					<div class="sort-ui">
-		                <span class="sort-label">Sort By: </span>
-		                <div class="btn-group">
-		                    <button type="button" class="btn btn-default active" data-sortby="pizza">Pizzas</button>
-		                    <button type="button" class="btn btn-default" data-sortby="drinks">Drinks</button>
-		                    <button type="button" class="btn btn-default" data-sortby="dessert">Dessert</button>
-		                </div>
-		            </div> <!-- sort-ui-->
 					<div class="menu-content">
 						<h2>Pizzas</h2>
             			<div class="pizzas"></div>
@@ -55,8 +45,8 @@
 
             			<h2>Desserts</h2>
             			<div class="dessert"></div>
-					</div> <!-- .menu-content -->
-				</div>
+					</div> <!-- menu-content -->
+				</div> <!-- col-order -->
 				<div class="col-order">
 					<h2>Your Cart</h2>
 					<div class="cart-items-container"></div>
@@ -71,34 +61,31 @@
 							<div class="total-price">
 								$<span class="total-price"></span>0.00
 							</div>
-						</div>
+						</div> <!-- row total-row -->
 					</div> <!-- cart-footer -->
+					
 					<h2>Delivery Information</h2>
-					<input type="hidden" name="cart">
-			         <form>
-			            <p>
-			                <label for="name">Name:</label>
-			                <input class="name-input" type="text" name="name" required>
-			            </p>
-			           <!--  method="POST" action="http://dawgpizza.com/orders/"
-			           <p>
-			                <label for="address1">Address:</label>
-			                <input id="address1-input" type="text" name="address1" required>
-			            </p>
-			            <p>
-			            	<label for="address2">Address:</label>
-			                <input id="address2-input" type="text" name="address2" >
-			            </p>
-			            <p>
-			                <label for="zip">Zip Code:</label>
-			                <input id="zip-input" type="text" name="zip" required>
-			            </p>
-			            <p>
-			                <label for="phoneNumber">Phone Number:</label>
-			                <input id="phoneNumber-input" type="text" name="phoneNumber" required>
-			            </p> -->
-			            <p><button class="place-order">Place Order</button></p>
-			        </form> <!-- form -->
+			         <form method="POST" action="http://dawgpizza.com/orders/">
+					     <p>
+					     	Name: <input type= "text" name="name" placeholder= "name" required>
+					     </p> 
+					     <p>
+					     	Address: <input type = "text" name= "address1" placeholder= "street and number" required>
+					     </p>
+					     <p>
+					     	Address: <input type = "text" name= "address2" placeholder= "(optional)">
+					     </p>
+					     <p>
+					     	Zip Code: <input type= "text" name= "zip" placeholder="zip code" required>
+					     </p>
+					     <p>
+					     	Phone Number:<input type= "text" name= "phone" placeholder="phone number" required>
+					     </p>
+					     
+					     <button type= 'submit' class= 'place-order big-btn-des'>
+					     	Place Order!<input type="hidden" name="cart">
+					     </button>
+					</form> <!-- form -->
 				</div> <!-- col-order -->
 			</div> <!-- row -->
 		</div> <!-- container -->
@@ -124,21 +111,20 @@
 		    </div> <!-- template drinks-dessert -->
 		    
             <div class="cart-item-template cart-item row">
-                <div class="col-xs-10">
-                	<div>
-                		<button type="button" class="btn btn-default btn-xs remove-item">&times;</button> 
-                		<span class="name"></span> : 
-                    	$<span class="price"></span>
-                	</div>
-                </div>
+                <div>
+               		<button type="button" class="btn btn-default btn-xs remove-item">&times;</button> 
+               		<span class="name"></span> : 
+                   	$<span class="price"></span>
+               	</div>
             </div><!-- cart item template -->
 		</div> <!-- template -->
 
 		<footer>Call us for delivery: 206-555-1212
-		<p class="copyright">&#169; 2013 Dawg Pizza</p>
+			<p class="copyright">&#169; 2013 Dawg Pizza</p>
 		</footer>
 
 	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<!-- <script src="lib/bootstrap.min.js"></script> -->
 	<script src="http://www.dawgpizza.com/orders/menu.js"></script>
@@ -147,7 +133,6 @@
     <script src="js/models.js"></script>
     <script src="js/menuModel.js"></script>
    	<script src="js/menu-input.js"></script>
-   	<script src="js/sort-menu.js"></script>
     <script src="js/views.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/cartItemView.js"></script>

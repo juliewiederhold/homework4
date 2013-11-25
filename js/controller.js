@@ -5,12 +5,13 @@ $(function(){
 
 	var cartView = createCartView({
 		model: cartModel,
-		template: $('.cart-item-template'),	// all of these are defined in index.html
+		template: $('.cart-item-template'),	
 		container: $('.cart-items-container'),
 		subTotalPrice: $('.sub-total-price'),
 		totalPrice: $('.total-price')
 	});
 
+    // Adds items to the shopping cart
 	$('.add-to-cart').click(function(){
     	var newCartItem = {
         	type: this.getAttribute('data-type'),
@@ -22,66 +23,27 @@ $(function(){
     	cartModel.addItem(newCartItem);
 	});
 
-	$('.place-order').click(function(){
-		if(cartModel.getTotalPrice() < 20) {
-			//alert("Dawg Pizza only delivers if the order is $20 or more. Please add something to your order, our desserts are delicious!");
-		}
-	});
-
-	// $('.sort-ui .btn').click(function(){
- //        var sortBtn = $(this);
- //        var sortAttr = sortBtn.attr('data-sortby');
- //        if('data-sortby' == 'drinks') {
- //        	sortObjArray(menuModel.drinksArray, sortAttr);
- //        	render(menuModel.drinks);
- //        }
- //        else if ('data-sortby' == 'dessert'){ 
- //        	sortObjArray(menuModel.dessertArray, sortAttr);
- //        	render(menuModel.dessert);
- //        }
- //        else {
- //        	sortObjArray(menuModel.pizzasArray, sortAttr);
- //        	render(menuModel.pizzas);
- //        }
-        
- //        $.each(sortBtn.siblings(), function(){
- //            var sibling = $(this);
- //            sibling.removeClass('active');
- //        });
- //    });
-
+    // Places the order and calls post function to http://dawgpizza.com/orders/
     $('.place-order').click(function(){
-        alert('a');
-        cartModel.name = $('name-input').val();
-        var valid = (null != cartModel.name && cartModel.name.length > 0);
-        alert(valid.val());
-        if(!valid) {
-            alert("Please fill out the entire form.");            
+        if(cartModel.getTotalPrice() < 20) {
+            alert("Dawg Pizza only delivers if the order is $20 or more. Please add something to your order, our desserts are delicious!");
+        } else {
+            cartModel.name = submit.find('input[name="name"]').val();
+            cartModel.address1 = submit.find('input[name="address1"]').val();
+            cartModel.address2 = submit.find('input[name="address2"]').val();
+            cartModel.zip = submit.find('input[name="zip"]').val();
+            cartModel.phone = submit.find('input[name="phone"]').val();
+
+            postCart(cartModel, $('.cart-form'));
         }
-        // var json = cartModel.JSON.stringify();
-
-        $.ajax({
-            type: 'POST',
-            url: 'http://dawgpizza.com/orders/',
-            contentType: 'application/json',
-            dataType: 'json',
-            data: cartModel.JSON.stringify()
-        });
-
-        // $.post("http://dawgpizza.com/orders/", cartModel);
+        
     });
 
-    // $('.place-order').submit(function(){
-    //     var valid = (null != value && value.length > 0);
-    //     if(!valid) {
-    //         alert("Please fill out the entire form.");            
-    //     }
-
-    //     cartModel.name = $('name-input').val();
-
-    //     // var json = JSON.stringify();
-    //     console.log(cartModel.name);
-    //     $.post("http://dawgpizza.com/orders/", cartModel);
-    // });
+    // Sets the input named "cart" to the passed cart's value
+    // then posts to http://dawgpizza.com/orders/
+    function postCart(cart, cartForm) {
+        cartForm.find('input[name="cart"]').val(JSON.stringify(cart));
+        cartForm.submit();
+    }
 
 });

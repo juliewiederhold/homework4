@@ -1,7 +1,7 @@
 /*
-    createMoviesModel()
+    createMenuModel()
 
-    Creates a model for the list of movies for sale.
+    Creates a model for the menu items for sale.
     This uses the ListModel as the prototype, but adds 
     a few specific methods.
 
@@ -10,14 +10,5 @@
 */
 
 function createMenuModel(config) {
-	// var model = {
-	// 	pizzas: config.pizzas,
-	// 	drinks: config.drinks,
-	// 	dessert: config.dessert
-	// };
-
-	// makeEventSource(model);
-
-    // sortObjArray(model.pizzas, 'pizza');
     return render(config);  
-} //createMoviesModel()
+} //createMenuModel()
